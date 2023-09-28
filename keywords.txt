@@ -1,0 +1,12 @@
+SimpleMotor KEYWORD1
+
+go_forward  KEYWORD2
+go_forward_left KEYWORD2
+go_forward_right KEYWORD2
+go_back KEYWORD2
+go_back_left KEYWORD2
+go_back_right KEYWORD2
+rotate_left KEYWORD2
+rotate_right KEYWORD2
+go_custom KEYWORD2
+stop KEYWORD2
