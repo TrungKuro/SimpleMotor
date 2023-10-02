@@ -16,8 +16,8 @@ class SimpleMotor
 public:
   /* ------------------------------- HÀM TẠO ------------------------------- */
   SimpleMotor(
-      uint8_t pinIn1, uint8_t pinIn2,
-      uint8_t pinIn3, uint8_t pinIn4);
+      int pinIn1, int pinIn2,
+      int pinIn3, int pinIn4);
 
   /* ----------------------------- HÀM SỬ DỤNG ----------------------------- */
 
@@ -53,10 +53,10 @@ public:
 
 private:
   /* --------------------------------- BIẾN -------------------------------- */
-  uint8_t _pinIn1;
-  uint8_t _pinIn2;
-  uint8_t _pinIn3;
-  uint8_t _pinIn4;
+  int _pinIn1;
+  int _pinIn2;
+  int _pinIn3;
+  int _pinIn4;
 
   /* ------------------------- HÀM ĐIỀU KHIỂN MOTOR ------------------------ */
 

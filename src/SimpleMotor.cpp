@@ -9,8 +9,8 @@
 /* ------------------------------------------------------------------------- */
 
 SimpleMotor::SimpleMotor(
-    uint8_t pinIn1, uint8_t pinIn2,
-    uint8_t pinIn3, uint8_t pinIn4)
+    int pinIn1, int pinIn2,
+    int pinIn3, int pinIn4)
 {
   _pinIn1 = pinIn1;
   _pinIn2 = pinIn2;
