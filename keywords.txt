@@ -1,5 +1,10 @@
 SimpleMotor KEYWORD1
 
+control_motor_channel_A KEYWORD2
+control_motor_channel_B KEYWORD2
+control_motor_channel_A_stop KEYWORD2
+control_motor_channel_B_stop KEYWORD2
+
 go_forward  KEYWORD2
 go_forward_left KEYWORD2
 go_forward_right KEYWORD2

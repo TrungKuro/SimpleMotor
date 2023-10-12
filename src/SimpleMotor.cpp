@@ -24,7 +24,81 @@ SimpleMotor::SimpleMotor(
 }
 
 /* ------------------------------------------------------------------------- */
-/*                                HÀM SỬ DỤNG                                */
+/*               HÀM SỬ DỤNG (CHO MOTOR - ĐIỀU KHIỂN 1 ĐỘNG CƠ)              */
+/* ------------------------------------------------------------------------- */
+
+/**
+ * Điều khiển một động cơ kênh A
+ * |
+ * - speed : tốc độ động cơ, đơn vị (%)
+ * |         phạm vi giá trị từ 0% đến 100%
+ * |
+ * - isCW  : chiều quay động cơ
+ * |         bằng "true" là quay thuận (CW - clockwise)
+ * |         bằng "false" là quay ngược (CCW - counter clockwise)
+ */
+void SimpleMotor::control_motor_channel_A(int speed, bool isCW)
+{
+  // Đảm bảo giá trị tốc độ nằm trong khoảng cho phép
+  constrain(speed, 0, 100);
+
+  // Chuyển đổi giá trị tốc độ (%) sang (PWM)
+  speed = map(speed, 0, 100, 0, 255);
+
+  // Điều khiển động cơ bên TRÁI
+  if (isCW)
+    motor_left_rotate_forward(speed);
+  else
+    motor_left_rotate_reverse(speed);
+}
+
+/**
+ * Điều khiển một động cơ kênh B
+ * |
+ * - speed : tốc độ động cơ, đơn vị (%)
+ * |         phạm vi giá trị từ 0% đến 100%
+ * |
+ * - isCW  : chiều quay động cơ
+ * |         bằng "true" là quay thuận (CW - clockwise)
+ * |         bằng "false" là quay ngược (CCW - counter clockwise)
+ */
+void SimpleMotor::control_motor_channel_B(int speed, bool isCW)
+{
+  // Đảm bảo giá trị tốc độ nằm trong khoảng cho phép
+  constrain(speed, 0, 100);
+
+  // Chuyển đổi giá trị tốc độ (%) sang (PWM)
+  speed = map(speed, 0, 100, 0, 255);
+
+  // Điều khiển động cơ bên PHẢI
+  if (isCW)
+    motor_right_rotate_forward(speed);
+  else
+    motor_right_rotate_reverse(speed);
+}
+
+/* ------------------------------------------------------------------------- */
+
+/**
+ * Điều khiển một động cơ kênh A đứng yên
+ */
+void SimpleMotor::control_motor_channel_A_stop()
+{
+  // Điều khiển động cơ bên TRÁI đứng yên
+  motor_left_stop();
+}
+
+/**
+ * Điều khiển một động cơ kênh B đứng yên
+ */
+void SimpleMotor::control_motor_channel_B_stop()
+{
+  // Điều khiển động cơ bên PHẢI đứng yên
+  motor_right_stop();
+}
+
+/* ------------------------------------------------------------------------- */
+/*                  HÀM SỬ DỤNG (CHO XE - ĐIỀU KHIỂN 2 BÁNH)                 */
 /* ------------------------------------------------------------------------- */
 
 /**

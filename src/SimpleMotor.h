@@ -19,7 +19,21 @@ public:
       int pinIn1, int pinIn2,
       int pinIn3, int pinIn4);
 
-  /* ----------------------------- HÀM SỬ DỤNG ----------------------------- */
+  /* ------------ HÀM SỬ DỤNG (CHO MOTOR - ĐIỀU KHIỂN 1 ĐỘNG CƠ) ----------- */
+
+  // Điều khiển một động cơ kênh A
+  void control_motor_channel_A(int speed, bool isCW);
+
+  // Điều khiển một động cơ kênh B
+  void control_motor_channel_B(int speed, bool isCW);
+
+  // Điều khiển một động cơ kênh A đứng yên
+  void control_motor_channel_A_stop();
+
+  // Điều khiển một động cơ kênh B đứng yên
+  void control_motor_channel_B_stop();
+
+  /* --------------- HÀM SỬ DỤNG (CHO XE - ĐIỀU KHIỂN 2 BÁNH) -------------- */
 
   // Điều khiển xe đi thẳng tới
   void go_forward(int speed);

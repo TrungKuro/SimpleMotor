@@ -19,6 +19,22 @@
 > - Đây là tính năng cho Trình Biên dịch kiểm tra, dùng cho bo Uno và Mega.
 > - Bạn có thể xóa đoạn code này để tắt chức năng kiểm tra.
 
+## Hàm điều khiển motor
+
+> Điều khiển độc lập từng motor của từng kênh A hoặc B.
+
+|Hàm|Chức năng|Phạm vi|
+|---|---------|-------|
+|control_motor_channel_A(`speed`, `isCW`)|Điều khiển motor kênh A<br>- speed: tốc độ quay (%)<br>- isCW = `true`: quay thuận<br>- isCW = `false`: quay ngược|`0% : 100%`
+|control_motor_channel_B(`speed`, `isCW`)|Điều khiển motor kênh B<br>- speed: tốc độ quay (%)<br>- isCW = `true`: quay thuận<br>- isCW = `false`: quay ngược|`0% : 100%`
+|-|-|-|-|
+|control_motor_channel_A_stop()|Cho dừng quay motor kênh A|*none*
+|control_motor_channel_B_stop()|Cho dừng quay motor kênh B|*none*
+
+## Hàm điều khiển xe
+
+> Điều khiển kết hợp 2 kênh A & B.
+
 |Hàm|Chức năng|Chi tiết|Phạm vi|
 |---|---------|--------|-------|
 |go_forward(`speed`)|Điều khiển xe đi thẳng tới|- Motor bên Trái đi tới (+)<br>- Motor bên Phải đi tới (+)|`0 : +255`

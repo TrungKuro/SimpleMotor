@@ -79,7 +79,7 @@ SimpleMotor demo(PIN_IN1, PIN_IN2, PIN_IN3, PIN_IN4);
 
 void setup()
 {
-    Serial.begin(115200);
+  Serial.begin(115200);
 }
 
 /* ------------------------------------------------------------------------- */
@@ -88,63 +88,77 @@ void setup()
 
 void loop()
 {
-    Serial.println("Đi thẳng");
-    demo.go_forward(255);
-    delay(5000);
+  Serial.println("Điều khiển xe...");
+  Serial.println();
 
-    Serial.println("Đi thẳng, rẽ trái");
-    demo.go_forward_left(255);
-    delay(5000);
+  /* --------------------------------------------------------------------- */
 
-    Serial.println("Đi thẳng, rẽ phải");
-    demo.go_forward_right(255);
-    delay(5000);
+  Serial.println("Đi thẳng");
+  demo.go_forward(255);
+  delay(5000);
 
-    /* ----------------------------------------------------------------------- */
+  Serial.println("Đi thẳng, rẽ trái");
+  demo.go_forward_left(255);
+  delay(5000);
 
-    Serial.println("Đi lùi");
-    demo.go_back(255);
-    delay(5000);
+  Serial.println("Đi thẳng, rẽ phải");
+  demo.go_forward_right(255);
+  delay(5000);
 
-    Serial.println("Đi lùi, rẽ trái");
-    demo.go_back_left(255);
-    delay(5000);
+  /* ----------------------------------------------------------------------- */
 
-    Serial.println("Đi lùi, rẽ phải");
-    demo.go_back_right(255);
-    delay(5000);
+  Serial.println("Đi lùi");
+  demo.go_back(255);
+  delay(5000);
 
-    /* ----------------------------------------------------------------------- */
+  Serial.println("Đi lùi, rẽ trái");
+  demo.go_back_left(255);
+  delay(5000);
 
-    Serial.println("Xoay trái");
-    demo.rotate_left(255);
-    delay(5000);
+  Serial.println("Đi lùi, rẽ phải");
+  demo.go_back_right(255);
+  delay(5000);
 
-    Serial.println("Xoay phải");
-    demo.rotate_right(255);
-    delay(5000);
+  /* ----------------------------------------------------------------------- */
 
-    /* ----------------------------------------------------------------------- */
+  Serial.println("Xoay trái");
+  demo.rotate_left(255);
+  delay(5000);
 
-    Serial.println("Dừng lại");
-    demo.stop();
-    delay(5000);
+  Serial.println("Xoay phải");
+  demo.rotate_right(255);
+  delay(5000);
 
-    /* ----------------------------------------------------------------------- */
+  /* ----------------------------------------------------------------------- */
 
-    Serial.println("-50 ; +50");
-    demo.go_custom(-50, 50);
-    delay(5000);
+  Serial.println("Dừng lại");
+  demo.stop();
+  delay(5000);
 
-    Serial.println("100 ; -100");
-    demo.go_custom(100, -100);
-    delay(5000);
+  /* ----------------------------------------------------------------------- */
 
-    Serial.println("0 ; +255");
-    demo.go_custom(0, 255);
-    delay(5000);
+  Serial.println("Hàm go_custom() điều khiển độc lập 2 bánh xe");
+  Serial.println("Lần lượt là bánh xe bên Trái và bên Phải");
+  Serial.println();
+  Serial.println("Giá trị (+) bánh xe quay tới");
+  Serial.println("Giá trị (-) bánh xe quay lùi");
+  Serial.println();
+  Serial.println("Giá trị tốc độ từ (-255) đến (+255)");
+  Serial.println();
 
-    Serial.println("-255 ; 0");
-    demo.go_custom(-255, 0);
-    delay(5000);
+  Serial.println("-50 ; +50");
+  demo.go_custom(-50, 50);
+  delay(5000);
+
+  Serial.println("100 ; -100");
+  demo.go_custom(100, -100);
+  delay(5000);
+
+  Serial.println("0 ; +255");
+  demo.go_custom(0, 255);
+  delay(5000);
+
+  Serial.println("-255 ; 0");
+  demo.go_custom(-255, 0);
+  delay(5000);
 }
